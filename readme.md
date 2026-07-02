@@ -20,10 +20,10 @@ Tornar o aprendizado mais eficiente, acessível e duradouro, permitindo que qual
 
 ## Principais características
 
-- 📚 Criação e gerenciamento de flashcards
-- 🧠 Repetição espaçada baseada em desempenho
-- 🔄 Revisões programadas automaticamente
-- 🎯 Foco em retenção de longo prazo
+- Criação e gerenciamento de flashcards
+- Repetição espaçada baseada em desempenho
+- Revisões programadas automaticamente
+- Foco em retenção de longo prazo
 
 ## Algoritmo de Repetição Espaçada
 
