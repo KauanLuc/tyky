@@ -1,4 +1,4 @@
-[banner]: docs\tyky-banner.png
+[banner]: docs/tyky-banner.png
 [anki]: https://apps.ankiweb.net/
 [supermemo]: https://www.supermemo.com
 [supermemo-docs]: https://www.supermemo.com/en/blog/the-true-history-of-spaced-repetition
