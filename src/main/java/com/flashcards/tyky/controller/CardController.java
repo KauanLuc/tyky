@@ -2,6 +2,9 @@ package com.flashcards.tyky.controller;
 
 import com.flashcards.tyky.domain.Card;
 import com.flashcards.tyky.service.CardService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +43,21 @@ public class CardController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable UUID id){
         service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/review/{id}/{qualityScore}")
+    public ResponseEntity<Void> review(
+            @PathVariable
+            UUID id,
+
+            @PathVariable
+            @Valid
+            @Min(0)
+            @Max(5)
+            Integer qualityScore
+    ){
+        service.review(id, qualityScore);
         return ResponseEntity.noContent().build();
     }
 }
