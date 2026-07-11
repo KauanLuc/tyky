@@ -1,10 +1,7 @@
 package com.flashcards.tyky.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +27,10 @@ public class Card {
     private String back;
 
     @NotNull
+    @PositiveOrZero
+    private Integer repetitionCount;
+
+    @NotNull
     private Integer reviewInterval;
 
     @NotNull
@@ -37,7 +38,7 @@ public class Card {
     private Double easinessFactor;
 
     @NotNull
-    //@FutureOrPresent
+    @FutureOrPresent
     private LocalDateTime reviewAt;
 
     @Column(updatable = false)
@@ -49,7 +50,8 @@ public class Card {
     protected void onCreate(){
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
-        reviewAt = LocalDateTime.now();
+        reviewAt = LocalDateTime.now().plusMinutes(1);
+        repetitionCount = 0;
         reviewInterval = 1;
         easinessFactor = 2.5;
     }
